@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express, { Router } from "node_modules/@types/express";
 import * as loanController from "../controllers/loanController";
 
 const router: Router = express.Router();
