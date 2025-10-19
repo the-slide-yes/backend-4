@@ -23,14 +23,14 @@ export const createLoan = async (
 };
 
 /**
- * Manages requests, reponses, and validation to get a Loan.
+ * Manages requests, reponses, and validation to get all Loans.
  * 
  * It for sure does all that I promise ;)
  * @param req - The express Request
  * @param res  - The express Response
  * @param next - The express middleware chaining function
  */
-export const getLoan = async (
+export const getAllLoans = async (
     req: Request,
     res: Response,
     next: NextFunction
