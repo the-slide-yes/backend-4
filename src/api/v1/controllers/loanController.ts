@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "node_modules/@types/express";
-import { HTTP_STATUS } from "src/constants/httpConstants";
+import { HTTP_STATUS } from "../../../constants/httpConstants";
 import { successResponse } from "../models/responseModel";
 
 

@@ -1,5 +1,6 @@
 // import the express application and type definition
 import express, { Express } from "express";
+import loanRoutes from "./api/v1/routes/loanRoutes";
 
 // initialize the express application
 const app: Express = express();
@@ -37,6 +38,8 @@ app.get("/api/v1/health", (req, res) => {
 
     res.json(healthData);
 });
+
+app.use("/api/v1/loans", loanRoutes);
 
 // Route Imports START
 
