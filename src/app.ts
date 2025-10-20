@@ -9,6 +9,7 @@ import {
 
 import loanRoutes from "./api/v1/routes/loanRoutes";
 import userRoutes from "./api/v1/routes/userRoutes";
+import adminRoutes from "./api/v1/routes/adminRoutes";
 import errorHandler from "./api/v1/middleware/errorHandler";
 
 // initialize the express application
@@ -57,6 +58,7 @@ app.get("/api/v1/health", (req, res) => {
 // Route Imports START
 app.use("/api/v1/loans", loanRoutes);
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 // Route Imports END
 
