@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import authenticate from "../src/api/v1/middleware/authenticate";
 import { auth } from "../src/config/firebaseConfig";
 import { AuthenticationError } from "../src/api/v1/errors/errors";
-import { HTTP_STATUS } from "src/constants/httpConstants";
+import { HTTP_STATUS } from "../src/constants/httpConstants";
 
 // Mock Firebase auth
 jest.mock("../src/config/firebaseConfig", () => ({
