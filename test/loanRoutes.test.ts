@@ -1,8 +1,27 @@
-import app from "../src/app";
 import { HTTP_STATUS } from "../src/constants/httpConstants";
 import request from "supertest";
+import { NextFunction, Response, Request } from "node_modules/@types/express";
+import app from "../src/app";
+import { AuthorizationOptions } from "src/api/v1/models/authorizationOptions";
+
+// Mocking authentication, essentially bypassing the actual authentication process by calling next()
+jest.mock("../src/api/v1/middleware/authenticate", () => {
+    return jest.fn((_req: Request, _res: Response, next: NextFunction) =>
+        next()
+    );
+});
+
+// Mocking authorization, essentially bypassing the actual authentication process by calling next() and passing empty _options
+jest.mock("../src/api/v1/middleware/authorize", () => {
+    return jest.fn(
+        (_mockOptions: AuthorizationOptions) => (_req: Request, _res: Response, next: NextFunction) =>
+            next()
+    );
+});
+
 
 describe("Loan Routes", () => {
+
     afterEach(() => {
         jest.clearAllMocks();
     });
